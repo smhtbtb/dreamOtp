@@ -26,6 +26,8 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 OTP_EXPIRATION_MINUTES = 5
 FAKE_SMS_API_URL = os.getenv("FAKE_SMS_API_URL")
+DEFAULT_FROM_EMAIL = "example@dream.ir"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
