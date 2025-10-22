@@ -37,7 +37,7 @@ def generate_otp(identifier):
         code=code
     )
 
-    if identifier_type == "phone":
+    if identifier_type is IdentifierType.PHONE:
         send_sms(user.username, f"Your login code is {code}")
     else:
         send_email(user.email, code)
