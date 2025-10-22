@@ -13,8 +13,8 @@ class RequestOTPView(APIView):
             identifier = serializer.validated_data["identifier"]
             state, res = generate_otp(identifier)
             return Response({"message": "OTP sent"}, status=status.HTTP_200_OK) if state else Response(
-                {"message": f"Previous OTP is still valid. Time to expiration is {res} seconds"},
-                status=status.HTTP_406_NOT_ACCEPTABLE)
+                {"message": "Previous OTP is still valid", "remaining_seconds": res},
+                status=status.HTTP_429_TOO_MANY_REQUESTS)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 

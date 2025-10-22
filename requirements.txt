@@ -1,3 +1,4 @@
+pytest
 asgiref==3.10.0
 Django==5.2.7
 djangorestframework==3.16.1

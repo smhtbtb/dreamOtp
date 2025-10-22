@@ -35,3 +35,20 @@ python manage.py runserver
 ```
 If the code verified successfully, created user will log in automatically.
 
+## Testing
+This project includes both **unit tests** (for OTP logic) and **API tests** (for the DRF endpoints).
+
+### Run all tests
+
+Activate the virtual environment and run:
+
+```bash
+pytest -v
+```
+
+### Test layers
+| Layer | File                              | Purpose                                               |
+| ----- | --------------------------------- | ----------------------------------------------------- |
+| Unit  | `otp_auth/tests/test_services.py` | Tests OTP creation, expiration, and validation logic  |
+| API   | `otp_auth/tests/test_api_otp.py`  | Tests DRF endpoints for requesting and verifying OTPs |
+
